@@ -1,0 +1,219 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.btn {
+  text-align: center;
+  font-size: $font-size-4;
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius-1;
+  font-family: $font-secondary;
+  transition: all ease;
+  cursor: pointer;
+
+  &.inactive {
+    background-color: $neutral-5;
+    border: none;
+  }
+
+  &:active {
+    background-color: $primary-3;
+  }
+}
+
+.btn--small {
+  font-size: $font-size-4;
+}
+
+.btn--fit {
+  width: fit-content;
+}
+
+.btn--primary {
+  color: $neutral-1;
+  background-color: $primary-1;
+  border: 1.5px solid $primary-1;
+
+  &.inactive {
+    background-color: $neutral-3;
+    opacity: 0.5;
+  }
+}
+
+.btn--secondary {
+  color: $primary-2;
+  border: 1.5px solid $primary-1;
+  background-color: transparent;
+}
+
+.btn--tertiary {
+  color: $neutral-1;
+  font-weight: 500;
+  border: 1.5px solid $neutral-1;
+  width: fit-content;
+}
+
+.btn--quaternary {
+  color: $neutral-1;
+  background-color: $primary-2;
+  font-weight: 500;
+  border: none;
+}
+
+.btn--input {
+  border: none;
+  font-family: $font-secondary;
+}
+
+.btn--bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+
+  ::after {
+    content: '';
+  }
+}
+
+// toggle button
+
+// Reference: Vineeth.TR
+// https://codepen.io/vineethtrv/details/NWyGqNR
+
+.switch {
+  --inactive-bg: #cfd8dc;
+  --active-bg: #85bfaf;
+  --size: 1.5em;
+  appearance: none;
+  width: calc(var(--size) * 2.2);
+  height: var(--size);
+  display: inline-block;
+  border-radius: calc(var(--size) / 2);
+  cursor: pointer;
+  background-color: var(--inactive-bg);
+  background-image: radial-gradient(
+      circle calc(var(--size) / 2.1),
+      rgb(255, 255, 255) 100%,
+      #0000 0
+    ),
+    radial-gradient(circle calc(var(--size) / 1.5), #0003 0%, #0000 100%);
+  background-repeat: no-repeat;
+  background-position: calc(var(--size) / -1.75) 0;
+  transition: background 0.2s ease-out;
+}
+
+.switch:checked {
+  background-color: var(--active-bg);
+  background-position: calc(var(--size) / 1.75) 0;
+}
+
+// checkbox
+
+// Reference: Danian
+// https://codepen.io/daniandl/pen/OgbXzK
+
+.contact__select {
+  margin-left: auto;
+
+  .contact__checkbox {
+    display: none;
+  }
+
+  .contact__check {
+    display: inline-block;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    background: white;
+    vertical-align: middle;
+    margin-right: 1rem;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border 0.3s ease;
+
+    i.icon {
+      opacity: 0.2;
+      font-size: 1rem;
+      color: transparent;
+      transition: opacity 0.3s 0.1s ease;
+      -webkit-text-stroke: 3px rgba(0, 0, 0, 0.5);
+    }
+
+    &:hover {
+      border: 3px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &.active {
+    .contact__checkbox:checked + .contact__text .contact__check {
+      animation: check 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) forwards;
+
+      .icon {
+        opacity: 1;
+        transform: scale(0);
+        color: $neutral-1;
+        -webkit-text-stroke: 0;
+        animation: icon 0.3s cubic-bezier(1, 0.008, 0.565, 1.65) 0.1s 1 forwards;
+      }
+    }
+  }
+}
+
+@keyframes icon {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes check {
+  0% {
+    width: 1.5em;
+    height: 1.5em;
+    border-width: 5px;
+  }
+
+  10% {
+    width: 1.5em;
+    height: 1.5em;
+    opacity: 0.1;
+    background: rgba(0, 0, 0, 0.2);
+    border-width: 15px;
+  }
+
+  12% {
+    width: 1.5em;
+    height: 1.5em;
+    opacity: 0.4;
+    background: rgba(0, 0, 0, 0.1);
+    border-width: 0;
+  }
+
+  50% {
+    width: 2em;
+    height: 2em;
+    background: $primary-1;
+    border: 0;
+    opacity: 0.6;
+  }
+
+  100% {
+    width: 2em;
+    height: 2em;
+    background: $primary-1;
+    border: 0;
+    opacity: 1;
+  }
+}

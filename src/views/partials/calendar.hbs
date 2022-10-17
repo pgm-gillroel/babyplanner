@@ -1,0 +1,35 @@
+
+<div class="calendar-container mb-sm text--center wr-lg">
+    <div class="calendar">
+        <div class="calendar__header">
+            <button id="previous"><i class="calendar__angle fa-solid fa-angle-left"></i></button>
+            <span id="monthAndYear"></span>
+            <button id="next"><i class="calendar__angle fa-solid fa-angle-right"></i></button>                
+        </div>
+        <table class="calendar__current-month table-calendar" id="calendar" data-lang="en">
+            <thead class="calendar__week-days" id="thead-month"></thead>
+            <tbody class="calendar__days" id="calendar-body"></tbody>
+        </table>
+    </div>
+    <div class="container-calendar hide">
+        <div class="footer-container-calendar">
+            <label for="month">Jump To: </label>
+            <select id="month">
+                <option value=0>Jan</option>
+                <option value=1>Feb</option>
+                <option value=2>Mar</option>
+                <option value=3>Apr</option>
+                <option value=4>May</option>
+                <option value=5>Jun</option>
+                <option value=6>Jul</option>
+                <option value=7>Aug</option>
+                <option value=8>Sep</option>
+                <option value=9>Oct</option>
+                <option value=10>Nov</option>
+                <option value=11>Dec</option>
+            </select>
+            <select id="year"></select>
+        </div>
+    </div>
+</div>
+<div class="box"></div>

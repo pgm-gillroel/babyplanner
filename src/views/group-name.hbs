@@ -1,0 +1,31 @@
+<section class='bg bg--secondary bg--footer-white flex dir-column justify-center'>
+    {{> logo animation='scaleFromNullAnimation'}}
+    <h1 class='mb-md text--center wr-md'>Wat is de naam<br />van je groep?</h1>
+    <form method="post" action="group-name" class="form__container flex dir-column mb-xxl">
+        <label class='form__label mb-xxs wr-md'>Kies uit onderstaande lijst</label>
+        <select class='dropdown wr-md mb-xs dropdownGroup' name="groupName">
+            <option class="dropdown__option" value=''>Selecteer</option>
+            <option class="dropdown__option" value="Familie">Familie</option>
+            <option class="dropdown__option" value="Vrienden">Vrienden</option>
+            <option class="dropdown__option" value="Collega's">Collega's</option>
+        </select>
+
+        <label class='form__label mb-xxs wr-md'>Of kies zelf een naam</label>
+
+        <div class="form__input-container wr-md mb-xs">
+            <input type="text" name="newGroup" placeholder="Vul in..." class="form__input mb-xs inputGroupName">
+            {{#if formErrors}}
+            <ul class="error">
+                {{#each formErrors}}
+                <li>{{message}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
+
+        {{>input status="inactive" type="submit" btnType="primary" value="Instellingen groep" class="wr-md"}}
+    </form>
+    {{>footer group="active"}}
+</section>
+
+<script src="/scripts/group-name.js"></script>

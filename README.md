@@ -1,1 +1,2 @@
-# babyplanner
+# BabyPlanner
+BabyPlanner project, for Artevelde Hogeschool

@@ -1,0 +1,43 @@
+<section class="bg bg--secondary bg--footer-white flex dir-column justify-center ">
+
+    {{>logo animation="scaleFromNullAnimation"}}
+    <h1 class="text--center mb-sm">{{inputs.title}}</h1>
+
+    <form method="post" action="register-2" class="form__container wr-md flex dir-column mb-xs">
+        <div class="mb-sm">
+            {{#each inputs.forms}}
+            <div class="form__input-container flex dir-column">
+                <label class="mb-xxs">Wanneer ben je uitgerekend?</label>
+                <input value="{{value}}" type="{{type}}" name="{{name}}" placeholder="{{placeholder}}"
+                    class="form__input mb-xxs">
+            </div>
+
+            {{#if error}}
+            <div class="error">{{error}}</div>
+            {{/if}}
+
+            {{/each}}
+        </div>
+
+        <label class="mb-sm">Wat is het geslacht?</label>
+
+        <input name="gender" id="gender" type="hidden" value="">
+
+        <div class="gender-container mb-sm">
+            <button class="gender" name="gender" value="jongen">
+                <i class="gender__img gender--jongen fa-solid fa-mars"></i>
+                <span class="gender__title text--400">jongen</span>
+            </button>
+            <button class="gender" name="gender" value="meisje">
+                <i class="gender__img gender--meisje fa-solid fa-venus"></i>
+                <span class="gender__title">meisje</span>
+            </button>
+            <button class="gender" name="gender" value="onbekend">
+                <i class="gender__img gender--onbekend fa-solid fa-question"></i>
+                <span class="gender__title text--400">onbekend</span>
+            </button>
+        </div>
+        {{>input type="submit" btnType="primary" value="Maak account"}}
+    </form>
+    {{> link label="Ik heb reeds een account" href="/login" position="center" }}
+</section>

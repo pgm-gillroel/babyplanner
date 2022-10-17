@@ -1,0 +1,8 @@
+<label class="form__label form__label--primary form__label--primary-{{labelColor}} {{animation}}">{{label}}</label>
+<div class="form__input-container {{staggerFromBottomAnimation}}">
+    <input value="{{value}}" type="{{type}}" name="{{name}}" placeholder="{{placeholder}}"
+        class="form__input form__input--{{inputBorderColor}} mb-xxs {{animation}}">
+</div>
+{{#if error}}
+<div class="error staggerFromBottomAnimation">{{error}}</div>
+{{/if}}

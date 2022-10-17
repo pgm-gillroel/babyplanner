@@ -1,0 +1,30 @@
+<section class='bg bg--secondary bg--footer-white flex dir-column justify-center text--center'>
+    {{> logo color="" }}
+    <h1 class='mb-md'>Importeer je contacten</h1>
+    <input type="hidden" id="userId" value={{userId}}>
+    <div class='flex dir-column wr-sm mb-xs gap-0_5'>
+        <div class="uploadBttn">
+            {{> button label="Uploaden uit Facebook" type="primary" }}
+        </div>
+        <div class="uploadBttn">
+            {{> button label="Uploaden uit Google" type="primary" }}
+        </div>
+        <div class="uploadBttn">
+            {{> button label="Contactenlijst GSM" type="primary" }}
+        </div>
+        {{> link label="Overslaan" href="/" type="secondary" position="center"}}
+    </div>
+</section>
+
+{{#> modal display="hide" modalTitle="Contacten importeren"}}
+<p>De applicatie wil toegang tot je contactenlijst</p>
+<div class='modal__btns flex'>
+    <div class="declineBttn">
+        {{> button type="secondary" label="Weigeren"}}
+    </div>
+    <div class="acceptBttn">
+        {{> button type="primary" label="Toestaan"}}
+    </div>
+</div>
+{{/modal }}
+<script type="module" src="/scripts/contact-import.js"></script>

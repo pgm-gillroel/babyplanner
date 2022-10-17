@@ -1,0 +1,17 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.timepicker {
+  .plus,
+  .min {
+    color: $primary-2;
+    opacity: 0.5;
+    font-size: 1.25rem;
+  }
+
+  span {
+    color: $primary-2;
+    font-weight: 500;
+    font-size: $font-size-2;
+  }
+}

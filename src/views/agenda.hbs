@@ -1,0 +1,39 @@
+<section class='bg bg--secondary flex flex dir-column'>
+    {{#with data}}
+    {{>calendar}}
+
+    <div class="flex justify-between align-center mb-md  wr-lg">
+        <h1 class="">Jouw bezoeken</h1>
+        <a href="" class="visitor__all-days">Bekijk alle afspraken</a>
+    </div>
+
+    <div class="visitors-container remove-scrollbar wr-lg">
+        <div class="visitors ">
+            {{!-- status: confirmed OR denied --}}
+            {{#if notConfirmedVisits.length}}
+            <h2>Openstaande bezoeken</h2>
+            {{/if}}
+            {{#each notConfirmedVisits}}
+            {{>visitor id=id name=name time=timeString image=avatar status="Not_Confirmed"}}
+            {{/each}}
+            {{#if confirmedVisits.length}}
+            <h2 class="title--confirmed">Bevestigde bezoeken</h2>
+            {{/if}}
+            {{#each confirmedVisits}}
+            {{>visitorconfirmed name=name time=timeString image=avatar status="confirmed"}}
+            {{/each}}
+            {{#if pendingVisits.length}}
+            <h2 class="title--pending">Nog in verwerking...</h2>
+            {{/if}}
+            {{#each pendingVisits}}
+            {{>visitorpending name=name time=timeString image=avatar status="pending"}}
+            {{/each}}
+        </div>
+    </div>
+
+    <span class="overflow-bottom wr-lg"></span>
+    {{/with}}
+    {{>footer calendar="active"}}
+</section>
+<script src="/scripts/calendar.js"></script>
+<script src="/scripts/updateVisit.js"></script>

@@ -1,0 +1,13 @@
+<section class="bg bg--secondary bg--footer-white flex dir-column justify-center">
+    {{>logo animation="scaleFromNullAnimation"}}
+    <h1 class="text--center mb-sm">{{inputs.title}}</h1>
+    <form method="post" action="register-1" class="form__container wr-md flex dir-column mb-xs">
+        <div class="mb-sm">
+            {{#each inputs.forms}}
+            {{> form-input}}
+            {{/each}}
+        </div>
+        {{>input type="submit" btnType="primary" value="Ga verder" animation="staggerFromBottomAnimation"}}
+    </form>
+    {{> link label="Ik heb reeds een account" href="/login" position="center" }}
+</section>

@@ -1,0 +1,12 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.dropdown {
+  height: 2.5rem;
+  background-color: transparent;
+  border-radius: $border-radius-1;
+  border: 1.5px solid $primary-1;
+  padding: 0 0.5rem;
+  color: $primary-3;
+  font-family: semplicitapro, sans-serif;
+}

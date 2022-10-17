@@ -1,0 +1,17 @@
+<section class='bg bg--secondary bg--footer-white flex dir-column justify-center'>
+    {{> logo }}
+    {{#with data}}
+    <h1 class='text--center mb-lg wr-md'>Instellingen groep<br />{{name}}</h1>
+    {{/with}}
+
+    <form class='form__container mb-sm flex dir-column wr-md mb-md'>
+        <div class="mb-sm">
+            {{#each inputs.forms}}
+            {{> form-switches}}
+            {{/each}}
+        </div>
+        {{>input type="submit" id="btnSettings" value="Selecteer contacten" btnType='primary'}}
+    </form>
+</section>
+
+<script src="/scripts/settings.js"></script>

@@ -1,0 +1,45 @@
+<section class='bg--quaternary flex dir-column'>
+    <div class="contacts__title-block pt-lg">
+        <h1 class='text--center wr-md mb-xs'>Welke contacten behoren tot de groep Familie?</h1>
+        <h3 class='text--center mb-sm wr-md'>Selecteer één of meerdere contacten</h3>
+
+        <div class="form__container wr-md mb-md" action=''>
+            <div class="form__input-container wr-md">
+                <input value="" type="" name="" placeholder="Zoek een contact..." class="form__input contact_searchBar">
+                <i class="form__icon fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-container">
+        <form method="post" action="select-contacts" class="contacts">
+            <div class="mb-md">
+
+                {{#each contactsUser}}
+                <div class="contact" data-firstname={{firstname}} data-lastname={{lastname}}>
+                    <div class="contact__content wr-lg">
+                        <img src={{avatar}} alt="" class="contact__avatar">
+                        <span class="contact__name">{{firstname}} {{lastname}}</span>
+                        <label class="contact__select active">
+                            <input class="contact__checkbox" name="contacts" value="{{id}}" type="checkbox" />
+                            <span class="contact__text">
+                                <span class="contact__check">
+                                    <i class="fa fa-check icon"></i>
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="contact__footer"></div>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="contact__btn">
+                {{> input type="submit" value="Maak groep" btnType="quaternary"}}
+            </div>
+            <span class="overflow-bottom"></span>
+        </form>
+    </div>
+
+</section>
+<script src="/scripts/contacts.js"></script>

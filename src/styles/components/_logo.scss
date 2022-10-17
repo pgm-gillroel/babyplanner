@@ -1,0 +1,41 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  fill: $primary-4;
+
+  .logo__icon {
+    display: none;
+    transform: scale(2);
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  .logo__title {
+    font-family: $font-primary;
+    font-size: 2.5rem;
+    color: $neutral-1;
+    position: relative;
+    bottom: 0.25rem;
+  }
+
+  .logo__title--green {
+    font-weight: 700;
+    color: $primary-1;
+  }
+}
+
+.logo-icon {
+  fill: $primary-3;
+  width: 5rem;
+}
+
+.logo-icon--light {
+  fill: $primary-1;
+}

@@ -1,0 +1,93 @@
+<section class='bg bg--secondary flex dir-column pt-lg'>
+
+    <div class="mb-md flex align-center justify-between wr-md">
+        <h1 class="text--center">Account</h1>
+        <form class="account__log-out" method="post" action="logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            {{> input type="submit" value="Log uit"}}
+        </form>
+    </div>
+
+    <div class="account wr-md">
+        <h3 class="mb-md wr-md">Gegevens wijzigen</h3>
+        <div class="account__btn mb-xs dataUser">
+            <div class="account__btn-container">
+                {{#with userData}}
+                <a href="{{href}}" data-id={{id}} class="btn btnDataUser btn--primary">Gebruikersgegevens
+                    <i class="fa-solid fa-angle-up btnOpen"></i>
+                </a>
+                {{/with}}
+            </div>
+            <div class="account__form-container">
+                <div class="mb-xs">
+                    {{#with userData}}
+                    <div class="account__form">
+                        <label class="account__label" for="email">E-mail</label>
+                        <input class="account__input inputEmail" id="email" type="email" name="email"
+                            placeholder="{{email}}">
+                    </div>
+
+                    <div class="account__form">
+                        <label class="account__label" for="">Telefoon</label>
+                        <input class="account__input inputPhoneNumber" type="text"
+                            placeholder="{{userMeta.phoneNumber}}">
+                    </div>
+
+                    <div class="account__form">
+                        <label class="account__label" for="">Tel. partner</label>
+                        <input class="account__input inputPhoneNumberPartner" type="text"
+                            placeholder="{{phoneNumberPartner}}">
+                    </div>
+                    {{/with}}
+
+
+
+                </div>
+                <button class="btn btn--quaternary account__validate btnSubmitUser">Wijzig</button>
+            </div>
+        </div>
+        <div class="account__btn mb-xs dataBaby">
+            <div class="account__btn-container">
+                {{#with userData}}
+                <a href="{{href}}" data-id={{id}} class="btn btnDataBaby btn--primary">Babygegevens
+                    <i class="fa-solid fa-angle-up btnOpen"></i>
+                </a>
+                {{/with}}
+            </div>
+            <div class="account__form-container">
+                <div class="mb-xs">
+                    {{#with userData}}
+                    <div class="account__form">
+                        <label class="account__label">Voornaam</label>
+                        <input class="account__input inputFirstName" type="text" placeholder="{{firstname}}">
+                    </div>
+
+                    <div class="account__form">
+                        <label class="account__label">Achternaam</label>
+                        <input class="account__input inputLastName" required type="text" placeholder="{{lastname}}">
+                    </div>
+                    <div class="account__form">
+                        <label class="account__label">Gewicht</label>
+                        <input class="account__input inputWeight" required type="text" placeholder="{{weight}}">
+                    </div>
+                    <div class="account__form">
+                        <label class="account__label">Lengte</label>
+                        <input class="account__input inputLength" required type="text" placeholder="{{length}}">
+                    </div>
+
+                    <div class="account__form">
+                        <label class="account__label" for="">Geboorte</label>
+                        <input class="account__input inputDate" type="text" placeholder="20/06/2022">
+                    </div>
+                    {{/with}}
+                </div>
+                <button class="btn btn--quaternary account__validate btnSubmitBaby">Wijzig</button>
+            </div>
+        </div>
+
+        <h3 class="mb-md mt-lg">Importeer contacten</h3>
+        {{>button label="Importeer contacten" href="/import-contacts" type="primary"}}
+        {{>footer account="active"}}
+</section>
+
+<script src="/scripts/account.js"></script>

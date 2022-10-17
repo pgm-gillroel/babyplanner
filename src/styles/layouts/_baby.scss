@@ -1,0 +1,153 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.baby__bg {
+  overflow: hidden;
+  background-color: $neutral-2;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    background-color: $neutral-1;
+    position: absolute;
+    width: 100vw;
+    height: 17vh;
+    z-index: 1;
+    bottom: 0;
+  }
+}
+
+.baby {
+  position: relative;
+  z-index: 2;
+  background-color: $neutral-1;
+  box-shadow: 0px 0px 12px -6px #818b89;
+  border-radius: 2rem;
+  padding: 1.5rem 0;
+  margin-bottom: 30vh;
+  height: 100%;
+  max-height: 30.5rem;
+}
+
+.baby__avatar-container {
+  width: 6.5rem;
+  // position: absolute;
+  // top: -4rem;
+  margin-bottom: 1rem;
+
+  .baby__avatar-img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 1px 1px 7px -4px #000;
+    }
+  }
+
+  .baby__avatar-upload {
+    position: absolute;
+    bottom: 0rem;
+    right: 1rem;
+    background-color: $primary-1;
+    border-radius: 50%;
+    padding: 0.5rem;
+    transform: scale(1);
+    color: $neutral-2;
+  }
+}
+
+.baby__first-name {
+  font-family: 'ff-providence-sans-web-pro', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: $primary-2;
+  height: 2.5rem;
+}
+
+.baby__last-name {
+  font-weight: 200;
+  color: $neutral-4;
+}
+
+.baby__detail-container {
+  border-radius: 1rem;
+  color: $primary-4;
+  opacity: 0.75;
+  width: 100%;
+  gap: 1.5rem;
+
+  .baby__detail {
+    gap: 0.5rem;
+    font-size: 0.8rem;
+
+    .baby__detail-icon {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.baby__animation {
+  position: absolute;
+  z-index: 100;
+  transform: scale(2.1);
+  bottom: 14vh;
+}
+
+.baby__bg-container {
+  padding: 0.75rem 0;
+  font-weight: 200;
+  background-color: #e8f3f19f;
+  border-radius: 1.25rem;
+  .baby__quote {
+    .baby__quote-couple {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 2.25rem;
+        bottom: -0.15rem;
+        position: absolute;
+        height: 0.5px;
+        background-color: $neutral-4;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    font-size: 1rem;
+    color: $primary-3;
+    text-align: center;
+    width: 75%;
+  }
+
+  .baby__images {
+    h3 {
+      font-weight: 400;
+      font-size: $font-size-4;
+    }
+    .baby__img-container {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0 1rem;
+
+      .baby__img {
+        width: 24%;
+        opacity: 0.75;
+        cursor: pointer;
+
+        img {
+          border-radius: 0.5rem;
+          height: 2.5rem;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<section class="bg bg--primary flex dir-column align-center justify-center">
+    {{> animatedLogo dark="visible" }}
+    <h1 class="mb-xxs">Inloggen</h1>
+
+    <div class="form__container wr-md">
+        <form method="post" action="login" class="form__container flex dir-column mb-xs">
+            <div class="mb-xs">
+                {{#each inputs.forms}}
+                {{> form-input labelColor="white" inputBorderColor="white"}}
+                {{/each}}
+            </div>
+            {{>input type="submit" btnType="quaternary" value="Log in" class="wr-md"}}
+        </form>
+    </div>
+    {{> link label="Ik heb nog geen account" type="primary" href="/register-1" }}
+</section>

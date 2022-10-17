@@ -1,0 +1,46 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.modal {
+  background-color: rgba(195, 194, 194, 0.649);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+
+  .modal__container {
+    position: absolute;
+    background-color: white;
+    padding: 1.5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: $border-radius-1;
+    width: 80vw;
+    box-shadow: 0px 1px 10px -5px $neutral-5;
+
+    .modal__content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      .modal__close-btn {
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        top: -0.5rem;
+        right: -0.5rem;
+        fill: $primary-2;
+        cursor: pointer;
+      }
+
+      .modal__btns {
+        align-self: flex-end;
+        gap: 0.5rem;
+      }
+    }
+  }
+}

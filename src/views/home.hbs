@@ -1,0 +1,64 @@
+<section class='baby__bg bg flex dir-column align-center justify-center'>
+    <div class="baby flex dir-column align-center justify-center wr-lg mt-sm">
+        <div class="baby__avatar-container">
+            <div class="baby__avatar-img">
+                <img src="/img/baby.jpg" alt="" class="baby__avatar-img">
+            </div>
+
+        </div>
+        <div>
+            {{#with data}}
+            <h1 class="baby__first-name text--center wr-md mb-xs">{{firstname}}</h1>
+            <h2 class="baby__last-name text--center wr-md mb-sm">{{lastname}}</h2>
+        </div>
+        <div class="baby__detail-container flex justify-center mb-sm wr-sm">
+            <div class="baby__detail flex dir-column align-center">
+                <i class="baby__detail-icon fa-solid fa-calendar-days"></i>
+                <span class="baby__detail-info">{{day}}</span>
+            </div>
+            <div class="baby__detail flex dir-column align-center">
+                <i class="baby__detail-icon fa-solid fa-clock"></i>
+                <span class="baby__detail-info">{{hour}}</span>
+            </div>
+            <div class="baby__detail flex dir-column align-center">
+                <i class="baby__detail-icon fa-solid fa-weight-scale"></i>
+                <span class="baby__detail-info">{{weight}}</span>
+            </div>
+            <div class="baby__detail flex dir-column align-center">
+                <i class="baby__detail-icon fa-solid fa-ruler"></i>
+                <span class="baby__detail-info">{{length}}</span>
+            </div>
+            {{/with}}
+        </div>
+
+        <div class="baby__bg-container">
+            <div class="baby__quote flex dir-column wr-sm mb-sm">
+                <span class="baby__quote-couple">Saskia & Tom</span>
+                <span>Dit meisje, zo lief en klein, maakt dat we nu met z'n viertjes zijn &#128525;</span>
+            </div>
+
+            <div class="baby__images">
+                <ul class="baby__img-container wr-sm">
+                    <li class="baby__img">
+                        <img src="/img/baby-1.jpg" alt="">
+                    </li>
+                    <li class="baby__img">
+                        <img src="/img/baby-2.jpg" alt="">
+                    </li>
+                    <li class="baby__img">
+                        <img src="/img/baby-3.jpg" alt="">
+                    </li>
+                    <li class="baby__img">
+                        <img src="/img/baby-4.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <lottie-player class="baby__animation" src="https://assets6.lottiefiles.com/packages/lf20_v2o4x7nt.json"
+        background="transparent" speed="1" style="width: 300px; height: 100px;" autoplay loop></lottie-player>
+
+
+    {{> footer baby="active"}}
+</section>

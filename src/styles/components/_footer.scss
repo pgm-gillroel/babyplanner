@@ -1,0 +1,33 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+footer {
+  background-color: $primary-1;
+  width: 100vw;
+  padding: 0.75rem 0;
+  height: 4.5rem;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px 7px 20px -1px #818b89;
+  .footer__content {
+    .footer__link {
+      &.active {
+        position: relative;
+
+        svg {
+          fill: $primary-4;
+        }
+      }
+
+      svg {
+        transform: scale(0.9);
+        width: 3rem;
+        fill: $neutral-1;
+        opacity: 0.9;
+        transition: all 1s ease 1s;
+      }
+    }
+  }
+}

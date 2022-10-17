@@ -1,0 +1,46 @@
+{
+  "name": "To_do_app_demo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx sass src/styles/main.scss --watch public/assets/styles/main.css --watch --style=compressed",
+    "build": "nodemon ./src/app.js --config nodemon.json",
+    "start:dev": "concurrently npm:watch npm:build",
+    "seed": "node ./src/database/seeders/seed.js",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --coverage"
+  },
+  "keywords": [],
+  "author": "Stef De Boeck, Gilles Roels, Arnaud De Burchgraeve",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.1.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.2",
+    "express-validator": "^6.14.0",
+    "handlebars": "^4.7.7",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "sqlite3": "^5.0.8",
+    "swagger-ui-express": "^4.3.0",
+    "typeorm": "^0.3.6"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "jest": "^28.1.0",
+    "sass": "^1.49.9",
+    "supertest": "^6.2.3"
+  }
+}

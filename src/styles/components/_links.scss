@@ -1,0 +1,31 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.link {
+  text-align: end;
+  color: $primary-2;
+  display: block;
+  font-size: $font-size-6;
+}
+
+.link--primary {
+  color: $neutral-1;
+  font-weight: 300;
+}
+
+.link--secondary {
+  color: $primary-2;
+  font-weight: 400;
+}
+
+.link--end {
+  text-align: end;
+}
+
+.link--center {
+  text-align: center;
+}
+
+.link--underline {
+  text-decoration: underline;
+}
